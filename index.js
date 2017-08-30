@@ -65,58 +65,56 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__lang__ = __webpack_require__(1);
 
 
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-    string: __WEBPACK_IMPORTED_MODULE_0__lang__["b" /* string */],
-    func: __WEBPACK_IMPORTED_MODULE_0__lang__["a" /* func */]
+Object.defineProperty(exports, "__esModule", {
+    value: true
 });
+
+var _lang = __webpack_require__(1);
+
+exports.default = {
+    string: _lang.string,
+    func: _lang.func
+};
 
 /***/ }),
 /* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-const string = {
 
-    format(str) {
-        let args = [].slice.call(arguments, 1);
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+var string = exports.string = {
+    format: function format(str) {
+        var args = [].slice.call(arguments, 1);
         return str.replace(/{(\d+)}/g, function (match, number) {
-            return typeof args[number] != "undefined" ?
-                args[number] : match;
-        })
+            return typeof args[number] != "undefined" ? args[number] : match;
+        });
     }
+};
 
-}
-/* harmony export (immutable) */ __webpack_exports__["b"] = string;
+var func = exports.func = {
+    createGUID: function createGUID() {
 
-
-const func = {
-    createGUID() {
-
-        let arr = [];
-        for (let i = 0; i < 32; i++) {
-            arr.push(Math.floor(Math.random() * 16).toString(16))
+        var arr = [];
+        for (var i = 0; i < 32; i++) {
+            arr.push(Math.floor(Math.random() * 16).toString(16));
         }
-        return arr.join("")
+        return arr.join("");
     },
-
-
-    extend(target, source) {
+    extend: function extend(target, source) {
         for (var key in source) {
-            target[key] = source[key]
+            target[key] = source[key];
         }
     }
-}
-/* harmony export (immutable) */ __webpack_exports__["a"] = func;
-
-
+};
 
 /***/ })
 /******/ ]);
