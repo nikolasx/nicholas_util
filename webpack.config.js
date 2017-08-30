@@ -1,4 +1,5 @@
 const path = require("path")
+const webpack = require('webpack')
 
 function _resolve(url) {
     return path.resolve(__dirname, url)
@@ -13,7 +14,9 @@ module.exports = {
 
     output: {
         path: _resolve("dist"),
-        filename: "index.js"
+        filename: "[name].min.js",
+        library: 'Util',
+        libraryTarget: 'umd'
     },
 
     module: {
@@ -28,5 +31,13 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            }
+        })
+    ]
 }
