@@ -1,6 +1,6 @@
 {
   "name": "nicholas_util",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "a common js",
   "main": "./dist/index.min.js",
   "scripts": {
